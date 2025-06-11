@@ -1,6 +1,37 @@
 # 🍰 Chatbot Delicias y Caprichos
 
-Un chatbot inteligente para la boutique gastronómica "Delicias y Caprichos", creado con React y Google Gemini Flash 2.5.
+Un chatbot inteligen## 🔧 Instalación y Desarrollo
+
+### Prerrequisitos
+- Node.js (v18 o superior)
+- npm o yarn
+- API Key de Google Gemini
+
+### Instalación
+```bash
+# Clonar el repositorio
+git clone https://github.com/renzomac/chatbot-dyc.git
+cd chatbot-dyc
+
+# Instalar dependencias
+npm install
+
+# Configurar variables de entorno
+cp .env.example .env
+# Editar .env y agregar tu VITE_GEMINI_API_KEY
+
+# Iniciar servidor de desarrollo
+npm run dev
+```
+
+### Configuración de Variables de Entorno
+1. Obtén tu API Key de Google Gemini desde [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Copia el archivo `.env.example` como `.env`
+3. Reemplaza `tu_api_key_aqui` con tu API Key real
+
+```bash
+VITE_GEMINI_API_KEY=tu_api_key_de_gemini_aqui
+```e gastronómica "Delicias y Caprichos", creado con React y Google Gemini Flash 2.5.
 
 ## ✨ Características
 

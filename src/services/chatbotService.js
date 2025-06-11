@@ -1,8 +1,14 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { productosDeliciasYCaprichos, infoTienda, buscarProductos, obtenerPorCategoria } from '../data/productos.js';
 
-// Inicializar Gemini
-const genAI = new GoogleGenerativeAI('AIzaSyCuezt3bmOHM-tF6hgaIVeewCC5TM9-gsk');
+// Inicializar Gemini con variable de entorno
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+
+if (!apiKey) {
+  throw new Error('VITE_GEMINI_API_KEY no está definida en las variables de entorno');
+}
+
+const genAI = new GoogleGenerativeAI(apiKey);
 
 class ChatbotService {
   constructor() {
