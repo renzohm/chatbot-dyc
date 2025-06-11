@@ -101,7 +101,7 @@ const ChatBot = () => {
     <div className="chatbot-main-container">
       <div className="chatbot-header">
         <div className="chatbot-title">
-          <h3>💬 Chat con nuestro asistente</h3>
+          <h3>💬 Chat con nuestro asistente de Delicias y Caprichos</h3>
           <span className="chatbot-status">✨ En línea</span>
         </div>
         <div className="chatbot-actions">
