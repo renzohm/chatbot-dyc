@@ -1,0 +1,248 @@
+/* Contenedor principal del input */
+.chat-input-container {
+  background: white;
+  padding: 15px 20px 20px;
+  border-top: 1px solid #e0e0e0;
+  border-radius: 0 0 20px 20px;
+}
+
+/* Preguntas rápidas */
+.quick-questions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+  max-height: 80px;
+  overflow-y: auto;
+}
+
+.quick-questions::-webkit-scrollbar {
+  height: 4px;
+}
+
+.quick-questions::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 2px;
+}
+
+.quick-questions::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 2px;
+}
+
+.quick-question-btn {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 15px;
+  padding: 6px 12px;
+  font-size: 12px;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.quick-question-btn:hover:not(:disabled) {
+  background: #ff6b6b;
+  color: white;
+  border-color: #ff6b6b;
+  transform: translateY(-1px);
+}
+
+.quick-question-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Formulario de input */
+.chat-input-form {
+  width: 100%;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  background: #f8f9fa;
+  border-radius: 20px;
+  padding: 8px;
+  border: 2px solid #e0e0e0;
+  transition: border-color 0.2s ease;
+}
+
+.input-wrapper:focus-within {
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+}
+
+/* Textarea principal */
+.chat-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  resize: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 8px 12px;
+  max-height: 80px;
+  min-height: 20px;
+  color: #333;
+  border-radius: 12px;
+}
+
+.chat-input::placeholder {
+  color: #999;
+}
+
+.chat-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Botón de envío */
+.send-button {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.send-button:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.send-button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.send-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Auto-resize del textarea */
+.chat-input {
+  overflow-y: hidden;
+  transition: height 0.2s ease;
+}
+
+/* Estados especiales */
+.input-wrapper.sending {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Animaciones */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.send-button:disabled {
+  animation: pulse 1.5s infinite;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .chat-input-container {
+    padding: 12px 15px 15px;
+  }
+  
+  .quick-questions {
+    margin-bottom: 10px;
+  }
+  
+  .quick-question-btn {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+  
+  .chat-input {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+  
+  .send-button {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+}
+
+/* Efectos adicionales */
+.quick-question-btn:active {
+  transform: scale(0.95);
+}
+
+.input-wrapper:hover {
+  border-color: #ff6b6b;
+}
+
+/* Indicador de caracteres (opcional) */
+.character-count {
+  font-size: 11px;
+  color: #999;
+  text-align: right;
+  margin-top: 4px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.input-wrapper:focus-within + .character-count {
+  opacity: 1;
+}
+
+/* Estilos para modo oscuro (opcional) */
+@media (prefers-color-scheme: dark) {
+  .chat-input-container {
+    background: #2a2a2a;
+    border-top-color: #444;
+  }
+  
+  .input-wrapper {
+    background: #333;
+    border-color: #555;
+  }
+  
+  .input-wrapper:focus-within {
+    border-color: #ff6b6b;
+  }
+  
+  .chat-input {
+    color: #fff;
+  }
+  
+  .chat-input::placeholder {
+    color: #aaa;
+  }
+  
+  .quick-question-btn {
+    background: #333;
+    border-color: #555;
+    color: #ccc;
+  }
+  
+  .quick-question-btn:hover:not(:disabled) {
+    background: #ff6b6b;
+    color: white;
+  }
+}

@@ -1,0 +1,190 @@
+/* Mensajes base */
+.message {
+  display: flex;
+  margin-bottom: 12px;
+  animation: fadeInMessage 0.3s ease-out;
+}
+
+.message-content {
+  max-width: 85%;
+  padding: 12px 16px;
+  border-radius: 18px;
+  position: relative;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+/* Mensajes del usuario */
+.user-message {
+  justify-content: flex-end;
+}
+
+.user-message .message-content {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  border-bottom-right-radius: 6px;
+  margin-left: auto;
+}
+
+/* Mensajes del bot */
+.bot-message {
+  justify-content: flex-start;
+}
+
+.bot-message .message-content {
+  background: white;
+  color: #333;
+  border: 1px solid #e0e0e0;
+  border-bottom-left-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Texto del mensaje */
+.message-text {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.message-text strong {
+  font-weight: 600;
+  color: inherit;
+}
+
+.message-text em {
+  font-style: italic;
+}
+
+.bot-message .message-text strong {
+  color: #ff6b6b;
+}
+
+/* Links en mensajes */
+.message-text a {
+  color: #ff6b6b;
+  text-decoration: underline;
+}
+
+.user-message .message-text a {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Hora del mensaje */
+.message-time {
+  font-size: 11px;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.user-message .message-time {
+  justify-content: flex-end;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.bot-message .message-time {
+  color: #666;
+}
+
+/* Estado del mensaje */
+.message-status {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* Mensajes de error */
+.error .message-content {
+  background: #ffe6e6 !important;
+  border-color: #ffcccc !important;
+  color: #d63031 !important;
+}
+
+.error .message-text {
+  color: #d63031;
+}
+
+/* Formato de listas en mensajes del bot */
+.bot-message .message-text {
+  white-space: pre-line;
+}
+
+/* Hover effects */
+.message-content:hover {
+  transform: translateY(-1px);
+  transition: transform 0.2s ease;
+}
+
+.bot-message .message-content:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Animaciones */
+@keyframes fadeInMessage {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .message-content {
+    max-width: 90%;
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+  
+  .message-time {
+    font-size: 10px;
+  }
+}
+
+/* Scrollbar para mensajes largos */
+.message-text {
+  overflow-x: auto;
+}
+
+.message-text::-webkit-scrollbar {
+  height: 4px;
+}
+
+.message-text::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.message-text::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+
+/* Estilos especiales para elementos markdown */
+.message-text h1, .message-text h2, .message-text h3 {
+  margin: 8px 0 4px 0;
+  font-weight: 600;
+}
+
+.message-text ul, .message-text ol {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.message-text li {
+  margin: 4px 0;
+}
+
+.message-text code {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 13px;
+}
+
+.user-message .message-text code {
+  background: rgba(255, 255, 255, 0.2);
+}
