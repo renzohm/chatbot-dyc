@@ -3,42 +3,74 @@ export const productosDeliciasYCaprichos = {
   dulces: [
     {
       id: 1,
-      nombre: "Torta de Chocolate Premium",
-      descripcion: "Deliciosa torta de chocolate con relleno de ganache y cobertura de chocolate belga",
-      precio: 120,
-      categoria: "Postres",
-      disponible: true,
-      tamaños: ["Personal", "Mediana", "Grande"],
-      ingredientes: ["chocolate belga", "huevos frescos", "mantequilla", "azúcar", "harina"]
-    },
-    {
-      id: 2,
-      nombre: "Cheesecake de Frutos Rojos",
-      descripcion: "Cremoso cheesecake con base de galleta y topping de frutos rojos frescos",
-      precio: 95,
-      categoria: "Postres",
-      disponible: true,
-      tamaños: ["Personal", "Mediana"],
-      ingredientes: ["queso crema", "frutos rojos", "galletas", "azúcar"]
-    },
-    {
-      id: 3,
-      nombre: "Macarons Franceses",
-      descripcion: "Delicados macarons en variedad de sabores: vainilla, chocolate, fresa, pistacho",
-      precio: 9,
+      nombre: "Cupcake Clásico de Vainilla",
+      descripcion: "Nuestros cupcakes clásicos de vainilla están elaborados con una receta tradicional, suaves y esponjosos, perfectos para cualquier ocasión. Decorados con crema de mantequilla y un toque de color, estos cupcakes son ideales para cumpleaños, baby showers o simplemente para darte un gusto.",
+      precio: 5,
       categoria: "Dulces",
       disponible: true,
       unidad: "por unidad",
-      sabores: ["vainilla", "chocolate", "fresa", "pistacho", "lavanda"]
+      minimoCompra: 4,
+      anticipacion: "24 horas",
+      impuestos: "18% IGV incluido",
+      delivery: {
+        precio: 8,
+        zona: "Lima Metropolitana",
+        gratis: "compras mayores a S/ 60.00"
+      },
+      ingredientes: ["harina", "azúcar", "huevos frescos", "mantequilla", "esencia de vainilla", "polvo de hornear"]
+    },
+    {
+      id: 2,
+      nombre: "Torta Personalizada de Chocolate",
+      descripcion: "Una deliciosa torta artesanal hecha con capas de bizcochuelo húmedo de chocolate, rellena con ganache y decorada a pedido. Ideal para cumpleaños, aniversarios o celebraciones especiales. Cada torta es única y puede personalizarse con nombres, colores y temática.",
+      precio: 80,
+      categoria: "Postres",
+      disponible: true,
+      porciones: "10 porciones (base)",
+      tamaños: ["10 porciones", "15 porciones", "20 porciones"],
+      anticipacion: "48 horas",
+      personalizacion: "incluida (nombre, temática, colores)",
+      impuestos: "18% IGV incluido",
+      delivery: {
+        precio: 10,
+        zona: "Lima Metropolitana"
+      },
+      ingredientes: ["chocolate", "harina", "huevos frescos", "mantequilla", "azúcar", "ganache"]
+    },
+    {
+      id: 3,
+      nombre: "Mini Tarta de Fresas",
+      descripcion: "Mini tarta elaborada con una base crujiente de masa quebrada, rellena con crema pastelera artesanal y coronada con fresas frescas seleccionadas. Ideal como postre individual para eventos o como detalle elegante en una mesa dulce.",
+      precio: 10,
+      categoria: "Postres",
+      disponible: true,
+      unidad: "por unidad",
+      minimoCompra: 3,
+      sabores: ["fresa", "durazno", "frutos rojos"],
+      impuestos: "18% IGV incluido",
+      delivery: {
+        precio: 8,
+        zona: "Lima Metropolitana"
+      },
+      ingredientes: ["masa quebrada", "crema pastelera", "fresas frescas", "azúcar", "mantequilla"]
     },
     {
       id: 4,
-      nombre: "Tiramisú Tradicional",
-      descripcion: "Auténtico tiramisú italiano con café espresso y mascarpone",
-      precio: 32,
-      categoria: "Postres",
+      nombre: "Brownies Artesanales (Pack x6)",
+      descripcion: "Brownies 100% artesanales, elaborados con chocolate semiamargo y una textura húmeda irresistible. Incluye un pack de 6 unidades, ideal para compartir o regalar. Puedes elegir entre receta clásica, con nueces o chispas de chocolate blanco.",
+      precio: 18,
+      categoria: "Dulces",
       disponible: true,
-      unidad: "porción individual"
+      unidad: "pack de 6 unidades",
+      minimoCompra: 1,
+      variedades: ["clásica", "con nueces", "chispas de chocolate blanco"],
+      empaque: "ecológico con lazo decorativo (ideal para regalo)",
+      impuestos: "18% IGV incluido",
+      delivery: {
+        precio: 8,
+        zona: "Lima Metropolitana"
+      },
+      ingredientes: ["chocolate semiamargo", "harina", "huevos", "mantequilla", "azúcar", "nueces", "chispas de chocolate blanco"]
     }
   ],
 
@@ -170,9 +202,10 @@ export const infoTienda = {
   ],
   metodasPago: ["Efectivo", "Tarjeta de crédito", "Tarjeta débito", "Transferencia", "Nequi", "Daviplata"],
   politicas: {
-    delivery: "Delivery gratuito en compras superiores a S/ 130.00",
+    delivery: "Delivery desde S/ 8.00 en Lima Metropolitana. Delivery gratuito en compras superiores a S/ 60.00",
     cancelaciones: "Cancelaciones hasta 2 horas antes del pedido",
-    personalizados: "Productos personalizados requieren 48 horas de anticipación"
+    personalizados: "Productos personalizados requieren 24-48 horas de anticipación según el producto",
+    minimoCompra: "Algunos productos tienen mínimo de compra (consultar por producto)"
   }
 };
 
