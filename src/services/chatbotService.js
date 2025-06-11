@@ -54,7 +54,7 @@ INSTRUCCIONES:
 5. Informa sobre tiempos de preparación y políticas de pedidos especiales
 6. Si no tienes información específica, sé honesto y ofrece contactar al personal
 7. Mantén un tono conversacional pero informativo
-8. Siempre muestra los precios en pesos colombianos (COP)
+8. Siempre muestra los precios en soles peruanos (PEN)
 9. Si te preguntan por productos que no tenemos, sugiere alternativas similares de nuestro catálogo
 
 Responde siempre en español y como si fueras parte del equipo de Delicias y Caprichos. ¡Haz que cada cliente se sienta especial!`;
@@ -66,7 +66,7 @@ Responde siempre en español y como si fueras parte del equipo de Delicias y Cap
     // Dulces y Postres
     texto += '\n--- DULCES Y POSTRES ---\n';
     productosDeliciasYCaprichos.dulces.forEach(producto => {
-      texto += `• ${producto.nombre} - $${producto.precio.toLocaleString()} COP\n`;
+      texto += `• ${producto.nombre} - S/ ${producto.precio.toFixed(2)}\n`;
       texto += `  ${producto.descripcion}\n`;
       if (producto.tamaños) texto += `  Tamaños: ${producto.tamaños.join(', ')}\n`;
       if (producto.sabores) texto += `  Sabores: ${producto.sabores.join(', ')}\n`;
@@ -77,7 +77,7 @@ Responde siempre en español y como si fueras parte del equipo de Delicias y Cap
     // Bebidas
     texto += '\n--- BEBIDAS ---\n';
     productosDeliciasYCaprichos.bebidas.forEach(producto => {
-      texto += `• ${producto.nombre} - $${producto.precio.toLocaleString()} COP\n`;
+      texto += `• ${producto.nombre} - S/ ${producto.precio.toFixed(2)}\n`;
       texto += `  ${producto.descripcion}\n`;
       if (producto.tamaños) texto += `  Tamaños: ${producto.tamaños.join(', ')}\n`;
       if (producto.opciones) texto += `  Opciones: ${producto.opciones.join(', ')}\n`;
@@ -89,7 +89,7 @@ Responde siempre en español y como si fueras parte del equipo de Delicias y Cap
     // Panadería y Salados
     texto += '\n--- PANADERÍA Y SALADOS ---\n';
     productosDeliciasYCaprichos.panaderia.forEach(producto => {
-      texto += `• ${producto.nombre} - $${producto.precio.toLocaleString()} COP\n`;
+      texto += `• ${producto.nombre} - S/ ${producto.precio.toFixed(2)}\n`;
       texto += `  ${producto.descripcion}\n`;
       if (producto.variedades) texto += `  Variedades: ${producto.variedades.join(', ')}\n`;
       if (producto.opciones) texto += `  Opciones: ${producto.opciones.join(', ')}\n`;
@@ -102,7 +102,7 @@ Responde siempre en español y como si fueras parte del equipo de Delicias y Cap
     // Productos Especiales
     texto += '\n--- PRODUCTOS ESPECIALES ---\n';
     productosDeliciasYCaprichos.especiales.forEach(producto => {
-      texto += `• ${producto.nombre} - $${producto.precio.toLocaleString()} COP\n`;
+      texto += `• ${producto.nombre} - S/ ${producto.precio.toFixed(2)}\n`;
       texto += `  ${producto.descripcion}\n`;
       if (producto.cantidades) texto += `  Cantidades: ${producto.cantidades.join(', ')} unidades\n`;
       if (producto.rellenos) texto += `  Rellenos: ${producto.rellenos.join(', ')}\n`;
@@ -178,10 +178,10 @@ Responde siempre en español y como si fueras parte del equipo de Delicias y Cap
 Mientras tanto, puedo ayudarte con información básica:
 
 🍰 **Nuestros productos principales:**
-- Torta de Chocolate Premium: $45.000
-- Cheesecake de Frutos Rojos: $38.000
-- Café Especial de la Casa: $8.500
-- Macarons Franceses: $3.500 c/u
+- Torta de Chocolate Premium: S/ 120.00
+- Cheesecake de Frutos Rojos: S/ 95.00
+- Café Especial de la Casa: S/ 22.00
+- Macarons Franceses: S/ 9.00 c/u
 
 📞 **Contacto directo:** ${infoTienda.telefono}
 📍 **Ubicación:** ${infoTienda.ubicacion}
@@ -235,17 +235,17 @@ ${infoTienda.ubicacion}
       return `🍰 **Nuestros productos destacados:**
 
 **POSTRES:**
-• Torta de Chocolate Premium - $45.000
-• Cheesecake de Frutos Rojos - $38.000
-• Tiramisú Tradicional - $12.000
+• Torta de Chocolate Premium - S/ 120.00
+• Cheesecake de Frutos Rojos - S/ 95.00
+• Tiramisú Tradicional - S/ 32.00
 
 **BEBIDAS:**
-• Café Especial de la Casa - $8.500
-• Chocolate Caliente Artesanal - $9.500
+• Café Especial de la Casa - S/ 22.00
+• Chocolate Caliente Artesanal - S/ 25.00
 
 **ESPECIALES:**
-• Macarons Franceses - $3.500 c/u
-• Tortas Personalizadas - desde $85.000
+• Macarons Franceses - S/ 9.00 c/u
+• Tortas Personalizadas - desde S/ 220.00
 
 ¿Te interesa algo en particular? 😋`;
     }
@@ -283,7 +283,7 @@ Soy tu asistente virtual y estoy aquí para ayudarte a descubrir nuestros delici
     if (resultados.length > 0) {
       let respuesta = `Encontré estos productos para "${termino}":\n\n`;
       resultados.forEach(producto => {
-        respuesta += `🍴 **${producto.nombre}** - $${producto.precio.toLocaleString()} COP\n`;
+        respuesta += `🍴 **${producto.nombre}** - S/ ${producto.precio.toFixed(2)}\n`;
         respuesta += `   ${producto.descripcion}\n\n`;
       });
       return respuesta;
