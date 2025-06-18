@@ -8,7 +8,6 @@ const Header = ({ onNavigate, currentView, cartItemsCount = 0 }) => {
     { id: 'home', label: 'Inicio', icon: '🏠' },
     { id: 'products', label: 'Productos', icon: '🧁' },
     { id: 'about', label: 'Nosotros', icon: '👥' },
-    { id: 'contact', label: 'Contacto', icon: '📞' },
     { id: 'chat', label: 'Asistente', icon: '💬' }
   ]
 
