@@ -211,10 +211,10 @@ const Products = ({ onNavigate, cartItemsCount = 0 }) => {
                       </button>
                       <button 
                         className="btn-chat"
-                        onClick={() => onNavigate && onNavigate('chat')}
-                        title="Consultar por WhatsApp"
+                        onClick={() => window.open('https://www.instagram.com/deliciasycaprichos6/', '_blank')}
+                        title="Ver en Instagram"
                       >
-                        💬 Consultar
+                        � Instagram
                       </button>
                       {product.disponible && (
                         <button className="btn-order">

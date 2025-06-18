@@ -60,11 +60,11 @@ const Header = ({ onNavigate, currentView, cartItemsCount = 0 }) => {
           </button>
           
           <button 
-            className="whatsapp-btn"
-            onClick={() => window.open('https://wa.me/51934567890', '_blank')}
-            title="Contactar por WhatsApp"
+            className="instagram-btn"
+            onClick={() => window.open('https://www.instagram.com/deliciasycaprichos6/', '_blank')}
+            title="Síguenos en Instagram"
           >
-            📱 WhatsApp
+            � Instagram
           </button>
           
           <button 

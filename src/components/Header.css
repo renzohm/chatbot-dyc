@@ -201,9 +201,9 @@
   50% { transform: scale(1.2); }
 }
 
-/* WhatsApp Button */
-.whatsapp-btn {
-  background: #25d366;
+/* Instagram Button */
+.instagram-btn {
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -218,10 +218,10 @@
   font-size: 0.9rem;
 }
 
-.whatsapp-btn:hover {
-  background: #128c7e;
+.instagram-btn:hover {
+  background: linear-gradient(45deg, #d07920 0%,#c55a30 25%,#b8223a 50%,#a91e58 75%,#9a1577 100%);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 4px 12px rgba(240, 148, 51, 0.3);
 }
 
 /* Responsive */

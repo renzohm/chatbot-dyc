@@ -288,9 +288,8 @@ export const infoTienda = {
   },
   contacto: {
     telefono: "+51 1 234 5678",
-    whatsapp: "+51 934 567 890",
     email: "pedidos@deliciasycaprichos.pe",
-    instagram: "@deliciasycaprichos_peru",
+    instagram: "https://www.instagram.com/deliciasycaprichos6/",
     facebook: "Delicias y Caprichos Perú"
   },
   servicios: [

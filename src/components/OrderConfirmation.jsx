@@ -26,11 +26,8 @@ const OrderConfirmation = ({ orderData, onNavigate }) => {
     });
   };
 
-  const handleWhatsAppContact = () => {
-    const message = `¡Hola! Mi pedido #${orderData.orderId} ha sido confirmado. ¿Podrían darme el estado de mi orden?`;
-    const phoneNumber = '51934567890';
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+  const handleInstagramContact = () => {
+    window.open('https://www.instagram.com/deliciasycaprichos6/', '_blank');
   };
 
   return (
@@ -178,10 +175,10 @@ const OrderConfirmation = ({ orderData, onNavigate }) => {
         <div className="action-buttons">
           <button 
             className="btn btn-primary"
-            onClick={handleWhatsAppContact}
+            onClick={handleInstagramContact}
           >
-            <span className="btn-icon">💬</span>
-            Contactar por WhatsApp
+            <span className="btn-icon">�</span>
+            Ver en Instagram
           </button>
           
           <button 
@@ -212,10 +209,10 @@ const OrderConfirmation = ({ orderData, onNavigate }) => {
               </a>
               <button 
                 className="support-option"
-                onClick={handleWhatsAppContact}
+                onClick={handleInstagramContact}
               >
-                <span className="support-icon">💬</span>
-                <span>WhatsApp</span>
+                <span className="support-icon">�</span>
+                <span>Instagram</span>
               </button>
               <button 
                 className="support-option"

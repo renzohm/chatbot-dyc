@@ -11,10 +11,10 @@ const Process = ({ onNavigate }) => {
     },
     {
       number: "2", 
-      title: "Consulta por WhatsApp",
-      description: "Contáctanos directamente por WhatsApp para personalizar tu pedido y resolver dudas.",
-      icon: "�",
-      color: "#25d366"
+      title: "Síguenos en Instagram",
+      description: "Visita nuestro Instagram para ver más productos y mantenerte al día con nuestras novedades.",
+      icon: "📸",
+      color: "#E4405F"
     },
     {
       number: "3",

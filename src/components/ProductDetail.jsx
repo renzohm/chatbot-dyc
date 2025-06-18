@@ -64,11 +64,8 @@ const ProductDetail = ({ onNavigate, onBack, onAddToCart }) => {
     }
   };
 
-  const handleWhatsAppContact = () => {
-    const message = `¡Hola! Estoy interesado en el producto: *${product.nombre}* (${formatPrice(product.precio)})`;
-    const phoneNumber = '51934567890'; // Número de ejemplo
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+  const handleInstagramContact = () => {
+    window.open('https://www.instagram.com/deliciasycaprichos6/', '_blank');
   };
 
   const handleAddToCart = () => {
@@ -289,11 +286,11 @@ const ProductDetail = ({ onNavigate, onBack, onAddToCart }) => {
               
               <button 
                 className="btn btn-secondary btn-large"
-                onClick={handleWhatsAppContact}
+                onClick={handleInstagramContact}
                 disabled={!product.disponible}
               >
-                <span className="btn-icon">�</span>
-                Consultar por WhatsApp
+                <span className="btn-icon">📸</span>
+                Ver en Instagram
               </button>
             </div>
           </div>
@@ -344,10 +341,10 @@ const ProductDetail = ({ onNavigate, onBack, onAddToCart }) => {
           <div className="contact-options">
             <button 
               className="contact-option"
-              onClick={handleWhatsAppContact}
+              onClick={handleInstagramContact}
             >
-              <span className="contact-icon">💬</span>
-              <span>WhatsApp</span>
+              <span className="contact-icon">�</span>
+              <span>Instagram</span>
             </button>
             <a href="tel:+51934567890" className="contact-option">
               <span className="contact-icon">📞</span>
