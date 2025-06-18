@@ -11,10 +11,10 @@ const Process = ({ onNavigate }) => {
     },
     {
       number: "2", 
-      title: "Síguenos en Instagram",
-      description: "Visita nuestro Instagram para ver más productos y mantenerte al día con nuestras novedades.",
-      icon: "📸",
-      color: "#E4405F"
+      title: "Consulta con nuestro chatbot",
+      description: "Usa nuestro asistente virtual para resolver dudas, personalizar tu pedido y obtener recomendaciones.",
+      icon: "🤖",
+      color: "#667eea"
     },
     {
       number: "3",
