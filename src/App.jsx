@@ -127,7 +127,11 @@ function AppContent() {
       />
       <Route 
         path="/products" 
-        element={<Products onNavigate={handleNavigate} cartItemsCount={cartItems.length} />} 
+        element={<Products 
+          onNavigate={handleNavigate} 
+          cartItemsCount={cartItems.length} 
+          onAddToCart={handleAddToCart}
+        />} 
       />
       <Route 
         path="/product/:id" 
@@ -136,6 +140,7 @@ function AppContent() {
             onNavigate={handleNavigate}
             onBack={() => handleNavigate('products')}
             onAddToCart={handleAddToCart}
+            cartItemsCount={cartItems.length}
           />
         } 
       />

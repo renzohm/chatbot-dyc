@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { obtenerProductoPorId, obtenerPorCategoria } from '../data/productos';
+import Header from './Header';
 import './ProductDetail.css';
 
-const ProductDetail = ({ onNavigate, onBack, onAddToCart }) => {
+const ProductDetail = ({ onNavigate, onBack, onAddToCart, cartItemsCount = 0 }) => {
   const { id } = useParams();
   const productId = parseInt(id);
   const [quantity, setQuantity] = useState(1);
@@ -87,6 +88,8 @@ const ProductDetail = ({ onNavigate, onBack, onAddToCart }) => {
 
   return (
     <div className="product-detail">
+      <Header onNavigate={onNavigate} currentView="products" cartItemsCount={cartItemsCount} />
+      
       <div className="product-detail-header">
         <div className="breadcrumb">
           <button 
@@ -107,13 +110,6 @@ const ProductDetail = ({ onNavigate, onBack, onAddToCart }) => {
             {product ? product.nombre : 'Producto'}
           </span>
         </div>
-        
-        <button 
-          className="back-btn"
-          onClick={() => onBack ? onBack() : onNavigate && onNavigate('products')}
-        >
-          ← Volver
-        </button>
       </div>
 
       <div className="product-detail-container">

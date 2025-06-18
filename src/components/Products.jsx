@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { productosDeliciasYCaprichos, obtenerPorCategoria } from '../data/productos';
+import Header from './Header';
 import './Products.css';
 
-const Products = ({ onNavigate, cartItemsCount = 0 }) => {
+const Products = ({ onNavigate, cartItemsCount = 0, onAddToCart }) => {
   const [selectedCategory, setSelectedCategory] = useState('todos');
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -66,29 +67,58 @@ const Products = ({ onNavigate, cartItemsCount = 0 }) => {
     }
   };
 
+  const handleAddToCart = (product) => {
+    if (onAddToCart) {
+      // Agregar con cantidad por defecto de 1
+      onAddToCart({
+        ...product,
+        quantity: 1
+      });
+      
+      // Mostrar feedback visual más elegante
+      const notification = document.createElement('div');
+      notification.className = 'cart-notification';
+      notification.innerHTML = `
+        <div class="notification-content">
+          <span class="notification-icon">✅</span>
+          <span class="notification-text">${product.nombre} agregado al carrito</span>
+        </div>
+      `;
+      
+      // Agregar estilos inline para la notificación
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #4CAF50, #45a049);
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 10000;
+        font-weight: 600;
+        animation: slideInRight 0.3s ease-out;
+      `;
+      
+      document.body.appendChild(notification);
+      
+      // Remover la notificación después de 3 segundos
+      setTimeout(() => {
+        notification.style.animation = 'slideOutRight 0.3s ease-in';
+        setTimeout(() => {
+          if (document.body.contains(notification)) {
+            document.body.removeChild(notification);
+          }
+        }, 300);
+      }, 3000);
+    }
+  };
+
   return (
     <div className="products-page">
+      <Header onNavigate={onNavigate} currentView="products" cartItemsCount={cartItemsCount} />
+      
       <div className="products-header">
-        <div className="products-nav">
-          <button 
-            className="back-btn"
-            onClick={() => onNavigate && onNavigate('home')}
-          >
-            ← Volver al Inicio
-          </button>
-          
-          <button 
-            className="cart-btn"
-            onClick={() => onNavigate('cart')}
-            title="Ver carrito"
-          >
-            🛒 Carrito
-            {cartItemsCount > 0 && (
-              <span className="cart-badge">{cartItemsCount}</span>
-            )}
-          </button>
-        </div>
-        
         <div className="products-hero">
           <h1>Nuestros Productos</h1>
           <p>Descubre la mejor selección de postres artesanales, bebidas premium y productos gourmet</p>
@@ -217,8 +247,12 @@ const Products = ({ onNavigate, cartItemsCount = 0 }) => {
                         � Instagram
                       </button>
                       {product.disponible && (
-                        <button className="btn-order">
-                          🛒 Pedir
+                        <button 
+                          className="btn-add-cart"
+                          onClick={() => handleAddToCart(product)}
+                          title="Agregar al carrito"
+                        >
+                          🛒 Agregar al carrito
                         </button>
                       )}
                     </div>
