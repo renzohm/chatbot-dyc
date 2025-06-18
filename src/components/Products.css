@@ -30,6 +30,14 @@
   100% { transform: translateX(-1000px); }
 }
 
+.products-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 2rem 2rem;
+  gap: 1rem;
+}
+
 .back-btn {
   background: rgba(255, 255, 255, 0.2);
   color: white;
@@ -37,7 +45,6 @@
   padding: 1rem 2rem;
   border-radius: 50px;
   font-weight: 600;
-  margin: 0 2rem 2rem;
   cursor: pointer;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
@@ -46,6 +53,50 @@
 .back-btn:hover {
   background: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
+}
+
+.cart-btn {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.cart-btn:hover {
+  background: #ff5252;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.cart-btn .cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #e53e3e;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
 }
 
 .products-hero {
@@ -189,6 +240,10 @@
   overflow: hidden;
 }
 
+.product-image.clickable:hover {
+  transform: scale(1.02);
+}
+
 .product-emoji {
   font-size: 3rem;
   animation: bounce 2s ease-in-out infinite;
@@ -238,6 +293,11 @@
   color: #2d3748;
   margin: 0 0 0.8rem 0;
   line-height: 1.3;
+}
+
+.product-name.clickable:hover {
+  color: #667eea;
+  text-decoration: underline;
 }
 
 .product-description {
@@ -318,8 +378,10 @@
 .product-actions {
   display: flex;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
+.btn-detail,
 .btn-chat,
 .btn-order {
   padding: 0.6rem 1.2rem;
@@ -329,6 +391,20 @@
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 0.9rem;
+  flex: 1;
+  min-width: 100px;
+}
+
+.btn-detail {
+  background: linear-gradient(135deg, #ff9a8b, #fecfef);
+  color: #2d1810;
+  border: 2px solid rgba(255, 182, 193, 0.3);
+}
+
+.btn-detail:hover {
+  background: linear-gradient(135deg, #ff8a80, #f8bbd9);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 154, 139, 0.3);
 }
 
 .btn-chat {
@@ -458,6 +534,21 @@
 .btn-outline:hover {
   background: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
+}
+
+/* Elementos clickeables */
+.clickable {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.product-image.clickable:hover {
+  transform: scale(1.02);
+}
+
+.product-name.clickable:hover {
+  color: #667eea;
+  text-decoration: underline;
 }
 
 /* Responsive Design */

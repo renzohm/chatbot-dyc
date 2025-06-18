@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './Header.css'
 
-const Header = ({ onNavigate, currentView }) => {
+const Header = ({ onNavigate, currentView, cartItemsCount = 0 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const menuItems = [
@@ -48,6 +48,17 @@ const Header = ({ onNavigate, currentView }) => {
         </nav>
 
         <div className="header-actions">
+          <button 
+            className="cart-btn"
+            onClick={() => onNavigate('cart')}
+            title="Ver carrito"
+          >
+            🛒
+            {cartItemsCount > 0 && (
+              <span className="cart-badge">{cartItemsCount}</span>
+            )}
+          </button>
+          
           <button 
             className="whatsapp-btn"
             onClick={() => window.open('https://wa.me/51934567890', '_blank')}

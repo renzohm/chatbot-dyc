@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { productosDeliciasYCaprichos, obtenerPorCategoria } from '../data/productos';
 import './Products.css';
 
-const Products = ({ onNavigate }) => {
+const Products = ({ onNavigate, cartItemsCount = 0 }) => {
   const [selectedCategory, setSelectedCategory] = useState('todos');
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -69,12 +69,25 @@ const Products = ({ onNavigate }) => {
   return (
     <div className="products-page">
       <div className="products-header">
-        <button 
-          className="back-btn"
-          onClick={() => onNavigate && onNavigate('home')}
-        >
-          ← Volver al Inicio
-        </button>
+        <div className="products-nav">
+          <button 
+            className="back-btn"
+            onClick={() => onNavigate && onNavigate('home')}
+          >
+            ← Volver al Inicio
+          </button>
+          
+          <button 
+            className="cart-btn"
+            onClick={() => onNavigate('cart')}
+            title="Ver carrito"
+          >
+            🛒 Carrito
+            {cartItemsCount > 0 && (
+              <span className="cart-badge">{cartItemsCount}</span>
+            )}
+          </button>
+        </div>
         
         <div className="products-hero">
           <h1>Nuestros Productos</h1>
@@ -118,7 +131,11 @@ const Products = ({ onNavigate }) => {
           <div className="products-grid">
             {products.map(product => (
               <div key={product.id} className="product-card">
-                <div className="product-image">
+                <div 
+                  className="product-image clickable"
+                  onClick={() => onNavigate && onNavigate('product-detail', product.id)}
+                  title="Ver detalles del producto"
+                >
                   <span className="product-emoji">{getCategoryIcon(product.categoria)}</span>
                   <div className="product-category-badge">
                     {product.categoria}
@@ -131,7 +148,13 @@ const Products = ({ onNavigate }) => {
                 </div>
 
                 <div className="product-info">
-                  <h3 className="product-name">{product.nombre}</h3>
+                  <h3 
+                    className="product-name clickable"
+                    onClick={() => onNavigate && onNavigate('product-detail', product.id)}
+                    title="Ver detalles del producto"
+                  >
+                    {product.nombre}
+                  </h3>
                   <p className="product-description">{product.descripcion}</p>
                   
                   <div className="product-details">
@@ -179,6 +202,13 @@ const Products = ({ onNavigate }) => {
                     </div>
                     
                     <div className="product-actions">
+                      <button 
+                        className="btn-detail"
+                        onClick={() => onNavigate && onNavigate('product-detail', product.id)}
+                        title="Ver detalles del producto"
+                      >
+                        👁️ Ver Detalles
+                      </button>
                       <button 
                         className="btn-chat"
                         onClick={() => onNavigate && onNavigate('chat')}

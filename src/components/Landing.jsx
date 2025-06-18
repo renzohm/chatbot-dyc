@@ -5,10 +5,10 @@ import Process from './Process'
 import Footer from './Footer'
 import './Landing.css'
 
-const Landing = ({ onNavigate }) => {
+const Landing = ({ onNavigate, cartItemsCount = 0 }) => {
   return (
     <div className="landing">
-      <Header onNavigate={onNavigate} currentView="home" />
+      <Header onNavigate={onNavigate} currentView="home" cartItemsCount={cartItemsCount} />
       <Hero onNavigate={onNavigate} />
       <FeaturedProducts onNavigate={onNavigate} />
       <Process onNavigate={onNavigate} />

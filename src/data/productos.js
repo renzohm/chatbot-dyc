@@ -362,3 +362,14 @@ export const obtenerPorCategoria = (categoria) => {
       return [];
   }
 };
+
+// Función para obtener un producto por ID
+export const obtenerProductoPorId = (id) => {
+  const allProducts = [
+    ...productosDeliciasYCaprichos.dulces,
+    ...productosDeliciasYCaprichos.bebidas,
+    ...productosDeliciasYCaprichos.panaderia,
+    ...productosDeliciasYCaprichos.especiales
+  ];
+  return allProducts.find(product => product.id === parseInt(id));
+};

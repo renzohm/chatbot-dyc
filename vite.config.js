@@ -4,11 +4,12 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/chatbot-dyc/',
+  base: process.env.NODE_ENV === 'production' ? '/chatbot-dyc/' : '/',
   server: {
     host: true, // Permite acceso desde la red local
     port: 5173, // Puerto específico (opcional)
     open: true, // Abre automáticamente el navegador (opcional)
+    historyApiFallback: true, // Para que funcione el routing del lado del cliente
   },
   build: {
     outDir: 'dist',
