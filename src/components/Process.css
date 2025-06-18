@@ -129,7 +129,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0 0 1rem 0;
-  color: white;
+  color: black;
 }
 
 .step-description {
@@ -138,6 +138,7 @@
   margin: 0;
   opacity: 0.9;
   font-weight: 300;
+  color: black;
 }
 
 .step-animation {

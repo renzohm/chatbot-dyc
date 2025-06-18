@@ -38,10 +38,7 @@
 }
 
 .hero-accent {
-  background: linear-gradient(45deg, #ffd89b 0%, #19547b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: white;
   display: inline-block;
 }
 
@@ -51,6 +48,7 @@
   margin: 0 0 2rem 0;
   opacity: 0.9;
   font-weight: 300;
+  color: white;
 }
 
 .hero-buttons {
@@ -197,13 +195,14 @@
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
-  color: #ffd89b;
+  color: black;
 }
 
 .stat-label {
   font-size: 1rem;
   opacity: 0.9;
   font-weight: 300;
+  color: black;
 }
 
 .hero-decoration {
