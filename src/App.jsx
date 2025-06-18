@@ -26,7 +26,7 @@ function AppContent() {
         navigate('/')
         break
       case 'chat':
-        navigate('/chatbot-dyc')
+        navigate('/chatbot')
         break
       case 'products':
         navigate('/products')
@@ -105,7 +105,7 @@ function AppContent() {
         element={<Landing onNavigate={handleNavigate} cartItemsCount={cartItems.length} />} 
       />
       <Route 
-        path="/chatbot-dyc" 
+        path="/chatbot" 
         element={
           <div className="app">
             <div className="app-header">
