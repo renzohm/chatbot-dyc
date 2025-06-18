@@ -62,14 +62,14 @@ const Footer = () => {
               </div>
               <div className="contact-item">
                 <span className="contact-icon">📱</span>
-                <a href="tel:+573001234567" className="contact-link">
-                  +57 300 123 4567
+                <a href="tel:+51937417806" className="contact-link">
+                  +51 937 417 806
                 </a>
               </div>
               <div className="contact-item">
                 <span className="contact-icon">📍</span>
                 <span className="contact-text">
-                  Bogotá, Colombia
+                  Lima, Perú
                 </span>
               </div>
               <div className="contact-item">
